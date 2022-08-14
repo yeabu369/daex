@@ -15,6 +15,14 @@ model User {
   languageCode String?  @map("language_code")
   updatedAt    DateTime @updatedAt @map("updated_at")
   createdAt    DateTime @default(now()) @map("created_at")
+  Orders Order[]
+}
 
-  @@map(name: "users")
+model Order {
+  id     Int     @id @default(autoincrement())
+  userId Int
+  user   User    @relation(fields: [userId], references: [id])
+  amount Float?
+  price  Float?
+  status String?
 }
