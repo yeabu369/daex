@@ -19,6 +19,14 @@ export const getPrivateChatCommands = (options: {
       command: "start",
       description: t("start_command.description"),
     },
+    {
+      command: "buy",
+      description: t("buy_command.description"),
+    },
+    {
+      command: "sell",
+      description: t("sell_command.description"),
+    },
   ];
 
   if (options.includeLanguageCommand) {
@@ -35,5 +43,11 @@ export const getGroupChatCommands = (options: { localeCode: string }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const t = fluent.withLocale(options.localeCode);
 
-  return [];
+  const commands = [
+    {
+      command: "start",
+      description: t("start_command.description"),
+    },
+  ];
+  return commands;
 };

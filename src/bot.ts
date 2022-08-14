@@ -16,8 +16,10 @@ import {
 } from "@bot/middlewares";
 import {
   botAdminFeature,
+  buyFeature,
   languageSelectFeature,
   placeOrderFeature,
+  sellFeature,
   welcomeFeature,
 } from "@bot/features";
 import { isMultipleLocales } from "@bot/helpers/i18n";
@@ -48,6 +50,8 @@ bot.use(setUser());
 bot.use(botAdminFeature);
 bot.use(welcomeFeature);
 bot.use(placeOrderFeature);
+bot.use(buyFeature);
+bot.use(sellFeature);
 
 if (isMultipleLocales) {
   bot.use(languageSelectFeature);
