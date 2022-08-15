@@ -15,7 +15,7 @@ model User {
   languageCode String?  @map("language_code")
   updatedAt    DateTime @updatedAt @map("updated_at")
   createdAt    DateTime @default(now()) @map("created_at")
-  Orders Order[]
+  Orders       Order[]
 }
 
 model Order {
