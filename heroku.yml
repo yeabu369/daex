@@ -6,4 +6,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  worker: node dist/run.js
+  web: node dist/run.js
