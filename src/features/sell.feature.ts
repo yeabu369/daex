@@ -9,7 +9,7 @@ export const composer = new Composer<Context>();
 
 const feature = composer.filter(isPrivate);
 
-feature.hears("Sell", async (ctx) => {
+feature.hears(["Sell", "sell", "S", "s"], async (ctx) => {
   await ctx.replyWithChatAction("typing");
   await ctx.reply(ctx.t("sell"), {
     reply_markup: selectCryptoKeyboard,
