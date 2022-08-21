@@ -16,7 +16,7 @@ const run = async () => {
 
   if (config.isProd) {
     server.listen(
-      process.env.PORT || config.BOT_SERVER_PORT,
+      config.PORT || config.BOT_SERVER_PORT,
       config.BOT_SERVER_HOST,
       () => {
         bot.api
