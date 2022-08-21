@@ -37,4 +37,4 @@ RUN apt-get update \
 
 # Start the app
 EXPOSE 80
-CMD ["node", "dist/run.js"]
+CMD ["npm", "run", "migrate:start"]

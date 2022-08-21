@@ -11,6 +11,7 @@
     "build": "npm run clean && tsc",
     "dev": "npm run build && concurrently -i -k -n \"bot,build\" -c \"blue.bold,yellow.bold\" \"nodemon\" \"npm run watch\"",
     "start": "node dist/run.js",
+    "migrate:start": "prisma migrate deploy && npm run start",
     "prepare": "husky install"
   },
   "author": "deptyped <deptyped@gmail.com>",
