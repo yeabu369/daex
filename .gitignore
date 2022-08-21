@@ -131,3 +131,4 @@ data/
 
 *.env
 dump.rdb
+nodemon.json
