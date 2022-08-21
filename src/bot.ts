@@ -13,6 +13,7 @@ import {
   setUser,
   setupI18n,
   collectMetrics,
+  createOrder,
 } from "@bot/middlewares";
 import {
   botAdminFeature,
@@ -44,6 +45,7 @@ bot.use(setupContext());
 bot.use(setupLogger());
 bot.use(setupI18n());
 bot.use(setUser());
+bot.use(createOrder());
 
 // Handlers
 

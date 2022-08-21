@@ -2,9 +2,11 @@ import { Prisma } from "@prisma/client";
 import { prisma } from "@bot/prisma";
 
 // TODO: Create a function that creates an order
-export const createOrder = async (data: Prisma.OrderCreateInput) => {
+export const createOrder = async (telegramId: number) => {
   return prisma.order.create({
-    data,
+    data: {
+      userId: telegramId,
+    },
   });
 };
 

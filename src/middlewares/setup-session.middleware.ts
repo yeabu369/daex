@@ -10,6 +10,8 @@ const storage = new RedisAdapter({
 
 export const middleware = () =>
   session({
-    initial: () => ({}),
+    initial: () => ({
+      order: {},
+    }),
     storage,
   });
