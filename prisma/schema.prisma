@@ -13,6 +13,8 @@ model User {
   id           Int      @id @default(autoincrement())
   telegramId   BigInt   @unique @map("telegram_id")
   languageCode String?  @map("language_code")
+  firstname    String?  @map("first_name")
+  lastname     String?  @map("last_name")
   updatedAt    DateTime @updatedAt @map("updated_at")
   createdAt    DateTime @default(now()) @map("created_at")
   Orders       Order[]
