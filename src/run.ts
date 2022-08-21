@@ -15,17 +15,13 @@ const run = async () => {
   await loadLocales();
 
   if (config.isProd) {
-    server.listen(
-      config.BOT_SERVER_PORT || config.PORT,
-      config.BOT_SERVER_HOST,
-      () => {
-        bot.api
-          .setWebhook(config.BOT_WEBHOOK, {
-            allowed_updates: config.BOT_ALLOWED_UPDATES,
-          })
-          .catch((err) => logger.error(err));
-      }
-    );
+    server.listen(config.BOT_SERVER_PORT, config.BOT_SERVER_HOST, () => {
+      bot.api
+        .setWebhook(config.BOT_WEBHOOK, {
+          allowed_updates: config.BOT_ALLOWED_UPDATES,
+        })
+        .catch((err) => logger.error(err));
+    });
   } else {
     bot.start({
       allowed_updates: config.BOT_ALLOWED_UPDATES,
