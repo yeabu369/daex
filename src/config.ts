@@ -1,4 +1,4 @@
-import { cleanEnv, str, num, json } from "envalid";
+import { cleanEnv, str, num, json, port } from "envalid";
 
 export const config = cleanEnv(process.env, {
   NODE_ENV: str({ choices: ["development", "production"] }),
@@ -10,8 +10,8 @@ export const config = cleanEnv(process.env, {
   BOT_SERVER_HOST: str({
     default: "0.0.0.0",
   }),
-  BOT_SERVER_PORT: num({
-    default: 80,
+  BOT_SERVER_PORT: port({
+    default: parseInt(process.env.PORT as string, 10) || 80,
   }),
   BOT_ALLOWED_UPDATES: json({
     default: [],
@@ -19,7 +19,4 @@ export const config = cleanEnv(process.env, {
   BOT_TOKEN: str(),
   BOT_WEBHOOK: str(),
   BOT_ADMIN_USER_ID: num(),
-  PORT: str({
-    default: process.env.PORT || "3000",
-  }),
 });
