@@ -11,7 +11,7 @@ export const config = cleanEnv(process.env, {
     default: "0.0.0.0",
   }),
   BOT_SERVER_PORT: port({
-    default: parseInt(process.env.PORT as string, 10) || 80,
+    default: 80,
   }),
   BOT_ALLOWED_UPDATES: json({
     default: [],
