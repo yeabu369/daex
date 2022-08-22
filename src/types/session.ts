@@ -1,6 +1,6 @@
-import prisma from "@prisma/client";
+import { Order, Prisma } from "@prisma/client";
 
 export interface SessionData {
   languageCode?: string;
-  order?: prisma.Order;
+  order?: Omit<Order, "id" | "userId"> | { userId: number };
 }
