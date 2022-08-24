@@ -24,7 +24,7 @@
     "@grammyjs/transformer-throttler": "1.1.2",
     "@grammyjs/types": "2.7.0",
     "@moebius/fluent": "1.1.0",
-    "@prisma/client": "3.12.0",
+    "@prisma/client": "^4.2.1",
     "@satont/grammy-redis-storage": "1.2.0",
     "envalid": "7.3.1",
     "fastify": "3.28.0",
@@ -58,7 +58,7 @@
     "lint-staged": "12.3.8",
     "nodemon": "2.0.15",
     "prettier": "2.6.2",
-    "prisma": "3.12.0",
+    "prisma": "^4.2.1",
     "rimraf": "3.0.2",
     "ts-node": "10.7.0",
     "typescript": "4.6.3"
